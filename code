@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+struct Course {
+    string courseId;
+    string courseName;
+    vector<string> preRequisite;
+};
+Void DisplayMenu() {
+    cout << "1. Load Data Structure" << endl;
+    cout << "2. Print Course List" << endl;
+    cout << "3. Print Course" << endl;
+    cout << "4. Exit" << endl << endl;
+    cout << "Enter number to begin choice! ";
+}
+void loadCourse(string filename) {
+    ifstream file(filename);
+    if (file.is_open()) {
+        cout << "File loaded." << endl;
+
+
+        while (file, line) {
+
+            num = 0;
+            Node* node = new Node();
+            stringstream str(line);
+
+            while (num < 2) {
+                getLine(str, word, ',');
+                if (num == 0) {
+                    node->course.courseId = word;
+                }
+                else {
+                    node->course.courseName = word;
+                }
+                num++;
+            }
+            while (getLine(str, word, ',')) {
+                node->course.preRequisite.push_back(word);
+            }
+
+            else {
+            	cout << "error" << endl;
+            	return;
+            }
+
+
